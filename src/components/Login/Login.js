@@ -20,6 +20,7 @@ const Login = () => {
         LogIn(email, password)
             .then(result => {
                 const user = result.user;
+                console.log(user);
                 navigate('/home');
             })
             .catch(error => {
