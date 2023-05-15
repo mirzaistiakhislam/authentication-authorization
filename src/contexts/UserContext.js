@@ -12,16 +12,19 @@ const UserContext = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     const createUser = (email, password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
     const updateUser = (name) => {
+        setLoading(true);
         return updateProfile(auth.currentUser, {
             displayName: name
         });
     }
 
     const LogIn = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
 
@@ -34,6 +37,7 @@ const UserContext = ({ children }) => {
     }, [])
 
     const logOut = () => {
+        setLoading(true);
         return signOut(auth);
     }
 
